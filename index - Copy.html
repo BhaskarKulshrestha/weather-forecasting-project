@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>Weather app</title>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<body>
+    <div class="img1">
+
+        <form id="search-form">
+            <input type="search" placeholder="Enter City Name" id="search-input" required autocomplete="off" />
+            <br>
+            </br>
+            <button id="search-button">Search</button>
+
+        </form>
+   
+
+
+    <main id="app-container">
+        <div id="location">
+            <p>-------</p>
+        </div>
+        <div id="temp">
+            <img id="temp-icon" src="./icons/sun.svg" alt="">
+            <p><span id="temp-value">-----</span> <span id="temp-unit">&#176c</span> </p>
+        </div>
+
+        <div id="climate">
+            <p>------</p>
+        </div>
+    </div>
+
+    </main>
+
+
+    <script src="script.js">
+
+
+    </script>
+
+   <div class="small">
+
+       <canvas id="myChart"
+       style="width:100%;max-width:700px ; background-color: white;margin: auto;margin-top: 150px ; border: 10px solid black;"></canvas>
+       
+       <script>
+           var xValues = [Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7];
+        var yValues = [Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7, Math.floor(Math.random() * 9) + 7];
+        
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                }
+            }
+        });
+
+        </script>
+    <div class="labcont">
+
+        <div class="labels">
+            <p>Y-axis : Water vapour in Air (grams H2O per KG of Air)</p>
+            <p>X-axis : Temperature (in degree C)</p>
+        </div>
+        
+    </div>
+
+</div>
+    
+    
+    <footer class="footer">
+        <p>Bhaskar Kulshrestha</p>
+        <p>B.Tech second year </p>
+        <p>CS - AI and ML</p>
+        <p>2001641530020</p>
+    </footer>
+    
+    <footer style="height: 100px;width: 100px;">
+        
+    </footer>
+
+</body>
+
+</html>
